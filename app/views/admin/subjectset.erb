@@ -1,0 +1,46 @@
+<h1>수업관리 페이지입니다.</h1>
+<h2>[수업 목록]</h2>
+
+<p>수업 정보의 수정사항이 있다면 수업을 클릭하시오</p>
+<h1><a href="/admin/index">[뒤로가기]</a></h1>
+
+<div class="row">
+<%@sublist.each do |r|%>
+    <div class="col-sm-3">
+        <p>과목이름        :<%=r.subname%></p>
+        <p>교수이름        :<%=r.subteacher%></p>
+        <p>인원-1            :<%=r.substudentone%>/<%=r.sublimitone%></p>
+        <p>인원-2           :<%=r.substudenttwo%>/<%=r.sublimittwo%></p>
+        <p>내용설명        :<%=r.subcontent%></p>
+    </div>
+<%end%>
+</div>
+
+---------------------------------
+
+
+
+
+
+
+
+
+
+</hr>
+<h2>[수업 추가]</h2>
+<form action="/admin/classmake" method="POST">
+    <p>수업이름 : <input type="text" name="title" class="title" placeholder="수업이름"></p>
+    <p>강사이름 : <input type="text" name="teacher" class="title" placeholder="교강사 이름"></p>
+    <p>class 1 제한인원 : <input type="number" name="limitone" min="1" max="100" value="1"></p>
+    <p>class 2 제한인원 : <input type="number" name="limittwo" min="1" max="100" value="1"></p>
+    
+    
+    <p>[사진]</p>
+    <p>수업 알림</p>
+    <p><textarea rows="20" name="content" cols="50" placeholder="내용을 쓰세용"></textarea><p>
+
+    <input type="submit" value="추가하기">
+</form>
+    
+
+

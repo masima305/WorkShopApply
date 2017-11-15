@@ -1,0 +1,91 @@
+[유저목록]
+<h1><a href="/admin/index">[뒤로가기]</a></h1>
+<hr>
+<a href="/admin/userlist/0">[가입순서순 보기]</a>  <!--1-->
+<a href="/admin/userlist/1">[과목별 신청자 보기]</a>  <!--1-->
+<a href="/admin/userlist/2">[미신청자 목록]</a> <!--2-->
+<a href="/admin/userlist/3">[학번순으로 보기]</a> <!--3-->
+<hr>
+
+
+    
+<%if @flag == "0" || @flag == "2" || @flag == "3"%>
+<h1><%= @title %></h1>
+<table>
+    <tr>
+        <td> 가 입 순 서 </td>
+        <td> 이       름 </td>
+        <td> 학       번 </td>
+        <td> 폰   번  호 </td>
+        <td> 이   메  일 </td>
+        <td> 클   래  스 1 </td>
+        <td> 클   래  스 2 </td>
+    </tr>
+    <%@userlist.each do |r|%>
+        <tr>
+            <td><%=r.id%></td>
+            <td><%=r.name%></td>
+            <td><%=r.studentid%></td>
+            <td><%=r.phonenum%></td>
+            <td><%=r.email%></td>
+            <td><%=r.subone%></td>
+            <td><%=r.subtwo%></td>
+        </tr>
+    <%end%>
+</table>
+
+
+
+<% elsif @flag=="1" %> 
+<h1>과목별</h1>
+
+    <% @sublist.each do |s| %>
+<hr>
+    과목 : <%= s.subname %>
+    <% @selectedone=@userlistone.where('subone == ?' , s.subname )%>
+    <% @selectedtwo=@userlisttwo.where('subtwo == ?' , s.subname )%>
+    <table>
+    <tr>
+        <td> 가 입 순 서 </td>
+        <td> 이       름 </td>
+        <td> 학       번 </td>
+        <td> 폰   번  호 </td>
+        <td> 이   메  일 </td>
+        <td> 클   래  스 1 </td>
+        <td> 클   래  스 2 </td>
+    </tr>
+    <tr>
+        <td> class1 </td>
+    </tr>
+        <% @selectedone.each do |r| %>
+           <tr>
+                <td><%=r.id%></td>
+                <td><%=r.name%></td>
+                <td><%=r.studentid%></td>
+                <td><%=r.phonenum%></td>
+                <td><%=r.email%></td>
+                <td><%=r.subone%></td>
+                <td><%=r.subtwo%></td>
+            </tr>
+        <%end%>
+    <tr>
+        <td> class2 </td>
+    </tr>
+        <% @selectedtwo.each do |r| %>
+       <tr>
+            <td><%=r.id%></td>
+            <td><%=r.name%></td>
+            <td><%=r.studentid%></td>
+            <td><%=r.phonenum%></td>
+            <td><%=r.email%></td>
+            <td><%=r.subone%></td>
+            <td><%=r.subtwo%></td>
+        </tr>
+        <%end%>
+    </table>
+    <%end%>
+
+<% elsif @flag == "2"%>
+
+<%end%>
+

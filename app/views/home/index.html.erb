@@ -1,0 +1,42 @@
+
+
+
+<div id="main_logo">
+<h1>영미언어문화학과</h1>
+<h2>워크샵 신청 페이지</h2>
+</div>
+<% if user_signed_in? %>
+    <h2>로그인중</h2>
+    
+<h1>내 정보</h1>
+
+
+<div>
+    <p>유저이름        :<%=current_user.name%></p>
+    <p>학번           :<%=current_user.studentid%></p>
+    <p>폰번호        :<%=current_user.phonenum%></p>
+    <p>이메일      :<%=current_user.email%></p>
+</div>
+---------------------------------
+
+
+
+     
+        <% if current_user.name == '회장만세!'%>
+        <h2><a href="/admin/index">[관리자페이지]</a><h2>
+        <%end%>
+<h2><a href="/home/stat">[신청현황]</a><h2>
+<% elsif%>
+
+    <div id="main_img">
+        <%= image_tag("QQQ.jpg") %>
+    </div>
+<div id="main_button">
+    <a href="/users/sign_up"><button type="button" class="btn btn-outline-primary">회원가입</button></a>
+    <a href="/users/sign_in"><button type="button" class="btn btn-outline-primary"> 로그인 </button></a>
+</div>
+
+<% end %>
+</hr>
+
+
