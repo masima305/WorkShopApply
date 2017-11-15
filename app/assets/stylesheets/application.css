@@ -73,7 +73,10 @@
         margin: 5%;
     }
     .enrolled{
+        border: 5px solid #3333ff;
         border-radius: 10px;
+        background-color: #8080ff;
+        color: white;
         width:50%;
         height:7em;
         padding: 2%;
@@ -88,10 +91,15 @@
         font-weight: bold;
     }
     .subjects{
+        border: 5px solid #000099;
+        background-color: #9999ff;
         text-align: left;
         border-radius: 25px;
         margin: 2%;
         padding: 2%;
+    }
+    .border{
+        border: 10px;
     }
     .subjects .col-sm-6{
         text-align: center;

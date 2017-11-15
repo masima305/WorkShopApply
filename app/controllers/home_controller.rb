@@ -7,9 +7,9 @@ class HomeController < ApplicationController
     @userinfo = User.where(name: current_user.name)
     signal = User.where(name: "회장만세!").take.button
      
-    if signal == "0"
+    if signal == 0
       @flag = "OFF"
-    else
+    elsif signal ==1
       @flag = "ON"
     end
     

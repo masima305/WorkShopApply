@@ -10,8 +10,8 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="enrolled border border-primary">
-                    <p>class1 :<br>
+                <div class="enrolled">
+                    <p>14:00 ~ 15:00<br>
                     <%=current_user.subone %><br>
         
                     <% if current_user.subone != "none"%>
@@ -20,8 +20,8 @@
                 </div>  
             </div>
             <div class="col">
-                <div class="enrolled border border-primary">
-                    <p>class2 :<br>
+                <div class="enrolled">
+                    <p>15:20 ~ 16:20<br>
                     <%=current_user.subtwo %><br>
                 
                     <% if current_user.subtwo != "none"%>
@@ -40,10 +40,7 @@
   <div class="row">
     <%@sublist.each do |r|%>
     <div class="col-sm-4">
-        
-      
-
-        <div class=" border border-primary subjects">
+        <div class="subjects">
             <div class="row">
                 <div class="subjects_name_tag">
                     <p>강의이름<br>       <span><%=r.subname%></span></p>
@@ -52,21 +49,21 @@
             </div>
             <div class="row">
                 <div class="col-sm-6">
-                    <p>class1인원<br><span><%=r.substudentone%></span>/<%=r.sublimitone%></p>
+                    <p>14:00 <br>~ 15:00<br><span><%=r.substudentone%></span>/<%=r.sublimitone%></p>
                     <% if current_user.subone == r.subname %>
-                        <p>[이미 등록됨]</p>
+                        <p>[등록완료]</p>
                     <% elsif current_user.subtwo == r.subname %>
-                        <p>[이미 등록됨]</p>
+                        <p>[등록완료]</p>
                     <% elsif current_user.subone == "none"%>
                         <a href="/home/enrollone/<%=r.id%>"><button type="button" class="btn btn-success btn-sm">신청</button></a> 
                     <% end %>
                 </div>
                 <div class="col-sm-6">
-                    <p>class2인원<br><span><%=r.substudenttwo%></span>/<%=r.sublimittwo%></p>
+                    <p>15:20 <br>~ 16:20<br><span><%=r.substudenttwo%></span>/<%=r.sublimittwo%></p>
                     <% if current_user.subone == r.subname %>
-                        <p>[이미 등록됨]</p>
+                        <p>[등록완료]</p>
                     <% elsif current_user.subtwo == r.subname %>
-                        <p>[이미 등록됨]</p>
+                        <p>[등록완료]</p>
                     <% elsif current_user.subtwo == "none"%>
                         <a href="/home/enrolltwo/<%=r.id%>"><button type="button" class="btn btn-success btn-sm">신청</button></a>
                     <% end %>
