@@ -15,6 +15,7 @@
  */
 /* Remove the navbar's default margin-bottom and rounded borders */ 
      /* Remove the navbar's default margin-bottom and rounded borders */ 
+
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
@@ -72,17 +73,7 @@
     #main_button button{
         margin: 5%;
     }
-    .enrolled{
-        border: 5px solid #3333ff;
-        border-radius: 10px;
-        background-color: #8080ff;
-        color: white;
-        width:50%;
-        height:7em;
-        padding: 2%;
-        margin-left: 30%;
-        margin-right: 30%;
-    }
+    
     button{
         text-decoration: none;
         margin: 1px;
@@ -90,13 +81,7 @@
     span{
         font-weight: bold;
     }
-    .subjects{
-        background-color: #9999ff;
-        text-align: left;
-        border-radius: 25px;
-        margin: 2%;
-        padding: 2%;
-    }
+   
     .border{
         border: 10px;
     }
@@ -106,13 +91,7 @@
     .subjects_info{
         padding-top: 5%;
     }
-    .subjects_name_tag{
-        text-align: center;
-        background-color: white;
-        border-radius: 10px;
-        width: 80%;
-        margin-left: 10%
-    }
+    
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
       .sidenav {

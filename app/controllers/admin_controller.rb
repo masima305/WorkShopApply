@@ -39,6 +39,29 @@ class AdminController < ApplicationController
     
         redirect_to "/admin/classlist"
     end
+    def destroysubject
+        if current_user.name == "회장만세!"
+            newsub = Subject.find(params[:id])
+            newsub.destroy
+        end
+        redirect_to "/admin/classlist"
+    end
+    
+    def updatesubject
+        if current_user.name =="회장만세!"
+            newsub = Subject.find(params[:id])
+            newsub.subname = params[:title]
+            newsub.subteacher = params[:teacher]
+            newsub.sublimitone = params[:limitone]
+            newsub.sublimittwo = params[:limittwo]
+            newsub.subimg = params[:image]
+            newsub.subcontent = params[:content]
+            newsub.save
+        end
+        redirect_to "/admin/classlist"
+    end
+    
+    
     def onoff
         @stat = (User.find(current_user.id)).button
     end

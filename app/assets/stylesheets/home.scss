@@ -1,21 +1,35 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .subjects{
-        background-color: #9999ff;
+        background-color: white;
         text-align: left;
         border-radius: 25px;
         margin: 2%;
         padding: 2%;
+        box-shadow: 10px 10px 5px #888888;
     }
-.enrolled{
-        border: 5px solid #3333ff;
+
+.subjects_name_tag{
+        text-align: center;
         border-radius: 10px;
-        background-color: #8080ff;
-        color: white;
+        width: 80%;
+        margin-left: 10%;
+        background-color: white;
+    }
+
+.jumbotron{
+       background-color: #f1f1f1;
+}
+.enrolled{
+        background-color: white;
+        border-radius: 10px;
         width:50%;
         height:7em;
         padding: 2%;
         margin-left: 30%;
         margin-right: 30%;
+        box-shadow: 10px 10px 5px #888888;
     }

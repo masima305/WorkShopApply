@@ -8,14 +8,19 @@
 <% if user_signed_in? %>
     <h2>로그인중</h2>
     
-<h1>내 정보</h1>
-
-
-<div>
-    <p>유저이름        :<%=current_user.name%></p>
-    <p>학번           :<%=current_user.studentid%></p>
-    <p>폰번호        :<%=current_user.phonenum%></p>
-    <p>이메일      :<%=current_user.email%></p>
+<div class="row">
+    <div class="col-sm-4">    
+    </div>
+    <div class="col-sm-4">    
+        <div>
+            <p>유저이름        :<%=current_user.name%></p>
+            <p>학번           :<%=current_user.studentid%></p>
+            <p>폰번호        :<%=current_user.phonenum%></p>
+            <p>이메일      :<%=current_user.email%></p>
+        </div>
+    </div>
+    <div class="col-sm-4">    
+    </div>
 </div>
 ---------------------------------
 

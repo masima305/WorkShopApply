@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'admin/pushbutton' => "admin#pushbutton"
   get 'home/quit/:clanum' => "home#quit"
   post 'admin/classmake' => "admin#createsubject"
+  post 'admin/classupdate'  => "admin#updatesubject"
+  get 'admin/classdestroy/:id' => "admin#destroysubject"
   get 'home/enrollone/:id' => "home#enrollone"
   get 'home/enrolltwo/:id' => "home#enrolltwo"
   get 'home/stat' => "home#registerstat"
