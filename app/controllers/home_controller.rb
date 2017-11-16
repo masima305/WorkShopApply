@@ -89,7 +89,7 @@ class HomeController < ApplicationController
   def error
     @remote = (params[:num])
     if @remote == '0'
-      @content = "신청청원이 초과되었습니다."
+      @content = "신청정원이 초과되었습니다."
     elsif @remote == '1'
       @content = "아직 신청접수 시간이 아닙니다"
     elsif @remote == '2'
