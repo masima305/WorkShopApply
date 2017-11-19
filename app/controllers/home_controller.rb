@@ -51,7 +51,7 @@ class HomeController < ApplicationController
   def enrollone
       subject=Subject.find(params[:id])
       userinfo = User.find(current_user.id)
-      flag = User.where(sutudentid: "2012045967").take.button
+      flag = User.where(studentid: "2012045967").take.button
     if flag == 1
       if subject.sublimitone > subject.substudentone
         subject.substudentone = subject.substudentone+1
@@ -72,7 +72,7 @@ class HomeController < ApplicationController
   def enrolltwo
       subject=Subject.find(params[:id])
       userinfo = User.find(current_user.id)
-      flag = User.where(substudentid: "2012045967").take.button
+      flag = User.where(studentid: "2012045967").take.button
       
     if flag == 1
       if subject.sublimittwo > subject.substudenttwo
