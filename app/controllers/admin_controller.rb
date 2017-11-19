@@ -13,7 +13,7 @@ class AdminController < ApplicationController
         @flag = (params[:num])
         if @flag == "0" #가입순서순
             @title = "가입순서순"
-            @userlist = User.all
+            @userlist = User.all.order(:id)
         elsif @flag == "1"  #과목별
             @userlistone = User.where('subone != ?', "none")
             @userlisttwo = User.where('subtwo != ?', "none")

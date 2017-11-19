@@ -68,19 +68,21 @@
                 <td><%=r.subtwo%></td>
             </tr>
         <%end%>
+    
     <tr>
         <td> class2 </td>
     </tr>
-        <% @selectedtwo.each do |r| %>
-       <tr>
-            <td><%=r.id%></td>
-            <td><%=r.name%></td>
-            <td><%=r.studentid%></td>
-            <td><%=r.phonenum%></td>
-            <td><%=r.email%></td>
-            <td><%=r.subone%></td>
-            <td><%=r.subtwo%></td>
-        </tr>
+            <% @selectedtwo.each do |r| %>
+
+           <tr>
+                <td><%=r.id%></td>
+                <td><%=r.name%></td>
+                <td><%=r.studentid%></td>
+                <td><%=r.phonenum%></td>
+                <td><%=r.email%></td>
+                <td><%=r.subone%></td>
+                <td><%=r.subtwo%></td>
+            </tr>
         <%end%>
     </table>
     <%end%>

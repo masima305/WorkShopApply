@@ -3,14 +3,16 @@ class HomeController < ApplicationController
     @userlist = User.all
   end
   def registerstat
-    @sublist = Subject.all
+    @sublist = Subject.all.order(:id)
     @userinfo = User.where(name: current_user.name)
-    signal = User.where(name: "회장만세!").take.button
-     
+    signal = User.where(studentid: "2012045967").take.button
+
     if signal == 0
       @flag = "OFF"
-    elsif signal ==1
+    elsif signal == 1
       @flag = "ON"
+    elsif signal == 3
+      @flag = "찾을 수 없음"
     end
     
   
@@ -49,7 +51,7 @@ class HomeController < ApplicationController
   def enrollone
       subject=Subject.find(params[:id])
       userinfo = User.find(current_user.id)
-      flag = User.where(name: "회장만세!").take.button
+      flag = User.where(sutudentid: "2012045967").take.button
     if flag == 1
       if subject.sublimitone > subject.substudentone
         subject.substudentone = subject.substudentone+1
@@ -60,15 +62,17 @@ class HomeController < ApplicationController
       elsif 
         redirect_to "/home/error/0"
       end
-    else
+    elsif flag == 0
       redirect_to "/home/error/1"
+    else 
+      redirect_to "home/error/2"
     end
   end
   
   def enrolltwo
       subject=Subject.find(params[:id])
       userinfo = User.find(current_user.id)
-      flag = User.where(name: "회장만세!").take.button
+      flag = User.where(substudentid: "2012045967").take.button
       
     if flag == 1
       if subject.sublimittwo > subject.substudenttwo
@@ -80,7 +84,6 @@ class HomeController < ApplicationController
       elsif 
         redirect_to "/home/error/0"
       end
-      
     else
       redirect_to "/home/error/1"
     end
@@ -94,6 +97,8 @@ class HomeController < ApplicationController
       @content = "아직 신청접수 시간이 아닙니다"
     elsif @remote == '2'
       @content = "예기치 못한 에러가 발생하였습니다." #subject count error
+    elsif @remote == '3'
+      @content = "온오프 문제"
     end
   end
 end
