@@ -2,7 +2,7 @@
 <h1><a href="/admin/index">[뒤로가기]</a></h1>
 <hr>
 <a href="/admin/userlist/0">[가입순서순 보기]</a>  <!--1-->
-<a href="/admin/userlist/1">[과목별 신청자 보기]</a>  <!--1-->
+<a href="/admin/userlist/1">[클래스별 신청자 보기]</a>  <!--1-->
 <a href="/admin/userlist/2">[미신청자 목록]</a> <!--2-->
 <a href="/admin/userlist/3">[학번순으로 보기]</a> <!--3-->
 <hr>
@@ -37,9 +37,9 @@
     
     
     <% elsif @flag=="1" %> 
-    <h1>과목별</h1>
+    <h1>클라스별</h1>
     
-
+    <h2>클라스1</h2>
     <table>
         <tr>
             <td> 가 입 순 서 </td>
@@ -48,7 +48,6 @@
             <td> 폰   번  호 </td>
             <td> 이   메  일 </td>
             <td> 클   래  스 1 </td>
-            <td> 클   래  스 2 </td>
         </tr>
     </table>
     <table>
@@ -60,12 +59,22 @@
                 <td><%=r.phonenum%></td>
                 <td><%=r.email%></td>
                 <td><%=r.subone%></td>
-                <td><%=r.subtwo%></td>
             </tr>
         <%end%>
     </table>
         <hr>
+    <h2>클라스2</h2>
         <hr>
+    <table>
+        <tr>
+            <td> 가 입 순 서 </td>
+            <td> 이       름 </td>
+            <td> 학       번 </td>
+            <td> 폰   번  호 </td>
+            <td> 이   메  일 </td>
+            <td> 클   래  스 2 </td>
+        </tr>
+    </table>
     <table>    
         <%@userlisttwo.each do |r|%>
             <tr>
