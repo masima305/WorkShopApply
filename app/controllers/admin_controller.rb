@@ -15,8 +15,8 @@ class AdminController < ApplicationController
             @title = "가입순서순"
             @userlist = User.all.order(:id)
         elsif @flag == "1"  #과목별
-            @userlistone = User.where('subone != ?', "none")
-            @userlisttwo = User.where('subtwo != ?', "none")
+            @userlistone = User.all
+            @userlisttwo = User.all
         elsif @flag == "2" #미등록자
             @title = "미등록자"
             @userlist = User.where(subone: 'none',subtwo: 'none').all
